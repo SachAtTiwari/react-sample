@@ -1,9 +1,50 @@
-import React from 'react';
 import logo from './logo.svg';
 import { FaBeer, FaAccessibleIcon } from 'react-icons/fa';
+
+import React, { Component, Fragment } from "react";
+import { render } from "react-dom";
+import ScreenCapture from "./ScreenCapture";
+import "./style.css";
+//import "./test.scss";
 import './App.css';
 
-function App() {
+class App extends Component {
+  state = {
+    name: "GAMO",
+    screenCapture: ""
+  };
+
+  handleScreenCapture = screenCapture => {
+    this.setState({
+      screenCapture
+    });
+  };
+
+  render() {
+    const { screenCapture } = this.state;
+    return (
+      <ScreenCapture onEndCapture={this.handleScreenCapture}>
+        {({ onStartCapture }) => (
+          <Fragment>
+            <p>Start editing to see some magic happen :)</p>
+            <button onClick={onStartCapture}>Capture</button>
+            <br />
+            <br />
+            <img src={screenCapture} />
+           <img src={logo} className="App-logo" alt="logo" />
+          </Fragment>
+        )}
+      </ScreenCapture>
+    );
+  }
+}
+            //<img width="100"  src='https://svgshare.com/i/LpD.svg' title='' />
+
+
+//render(<App />, document.getElementById("root"));
+
+
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -24,6 +65,6 @@ function App() {
       </header>
     </div>
   );
-}
+}*/
 
 export default App;
