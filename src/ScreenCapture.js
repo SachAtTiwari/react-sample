@@ -199,7 +199,7 @@ export default class ScreenCapture extends Component {
     rasterizeHTML.drawHTML(htmlContent, canvas);
 
 
-    html2canvas(body).then(canvas => {
+    /*html2canvas(body).then(canvas => {
       let croppedCanvas = document.createElement('canvas')
       let croppedCanvasContext = croppedCanvas.getContext('2d')
 
@@ -209,7 +209,7 @@ export default class ScreenCapture extends Component {
       croppedCanvasContext.drawImage(canvas, cropPositionLeft, cropPositionTop, cropWidth, cropHeigth, 0, 0, cropWidth, cropHeigth);
 
       this.props.onEndCapture(croppedCanvas.toDataURL())
-    });
+    });*/
   }
 
   renderChild = () => {

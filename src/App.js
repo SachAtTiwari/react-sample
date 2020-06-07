@@ -1,9 +1,9 @@
 import logo from './logo.svg';
-//import { FaBeer, FaAccessibleIcon } from 'react-icons/fa';
+import { FaFacebookF, FaTwitterSquare, FaYoutube, FaCloud } from 'react-icons/fa';
 
 import React, { Component, Fragment } from "react";
 //import { render } from "react-dom";
-//import ScreenCapture from "./ScreenCapture";
+import ScreenCapture from "./ScreenCapture";
 import "./style.css";
 //import "./test.scss";
 import './App.css';
@@ -89,24 +89,39 @@ class App extends Component {
   
 
   render() {
-    //const { screenCapture } = this.state;
+    const { screenCapture } = this.state;
     return (
+	<div>
           <Fragment>
-            <button onClick={this.handleClickTakeScreenShot1}>Capture</button>
-            <img src={logo} className="App-logo" alt="logo" />
+            <div className="textCenter">
+            	<img  src={logo} className="App-logo" alt="logo" />
+            	<FaFacebookF />
+	        <FaCloud />
+	        <FaTwitterSquare />
+                <FaYoutube />
+                <br />
+               <button onClick={this.handleClickTakeScreenShot1}>Capture 1</button>
+	    </div>
           </Fragment>
-      /*<ScreenCapture onEndCapture={this.handleScreenCapture}>
+       <br/>
+      {/*<ScreenCapture onEndCapture={this.handleScreenCapture}>
         {({ onStartCapture }) => (
           <Fragment>
-            <p>Start editing to see some magic happen :)</p>
-            <button onClick={onStartCapture}>Capture</button>
+            <div className="textCenter">
+            	<img  src={logo} className="App-logo" alt="logo" />
+            	<FaFacebookF />
+	        <FaCloud />
+	        <FaTwitterSquare />
+                <FaYoutube />
+                <br />
+               <button onClick={onStartCapture}>Capture 2</button>
+	    </div>
             <br />
-            <br />
-            <img src={screenCapture} />
-           <img src={logo} className="App-logo" alt="logo" />
+            <img alt="Test" src={screenCapture} />
           </Fragment>
         )}
-      </ScreenCapture>*/
+      </ScreenCapture>*/}
+	</div>
     );
   }
 }
